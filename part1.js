@@ -19,7 +19,7 @@ function validatePhone() {
 //Functions of password
 function generatePassword() {
     const passwordInput = document.getElementById("user-pass");
-    const errorMsg = passwordInput.nextElementSibling;
+    const errorMsg = document.querySelector(".mb-3 .error-msg");
     
     const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     let generatedPassword = "_";
@@ -34,7 +34,7 @@ function generatePassword() {
 }
 function validatePassword() {
     const passwordInput = document.getElementById("user-pass");
-    const errorMsg = passwordInput.nextElementSibling;
+    const errorMsg = document.querySelector(".mb-3 .error-msg");
     const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*_).{8,16}$/;
     
     if (!passwordPattern.test(passwordInput.value)) {
