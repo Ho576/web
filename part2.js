@@ -14,19 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     //Display students in the table
+
     function displayStudents(studentList) {
         const tbody = studentsTable.querySelector("tbody");
         tbody.innerHTML = "";
-
+    
         if (studentList.length === 0) {
             const noStudentsRow = document.createElement("tr");
             noStudentsRow.innerHTML = '<td colspan="2">No students were found</td>';
             tbody.appendChild(noStudentsRow);
         } else {
-
-             // Sort by section
+            // Sort by section
             studentList.sort((a, b) => a.section - b.section);
-            
+    
             studentList.forEach(student => {
                 const row = document.createElement("tr");
                 const sectionCell = document.createElement("td");
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }
-
+    
     //Search button
     searchButton.addEventListener("click", searchStudents);
 });
