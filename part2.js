@@ -23,6 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
             noStudentsRow.innerHTML = '<td colspan="2">No students were found</td>';
             tbody.appendChild(noStudentsRow);
         } else {
+
+             // Sort by section
+            studentList.sort((a, b) => a.section - b.section);
+            
             studentList.forEach(student => {
                 const row = document.createElement("tr");
                 const sectionCell = document.createElement("td");
